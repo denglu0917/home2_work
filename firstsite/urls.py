@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import logout
 from firstapp.views import index, detail, comment, index_login, index_register, vote, myinfo, collection
+from firstapp.api import article
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +34,7 @@ urlpatterns = [
     path('vote/<int:id>', vote, name='vote'),
     path('myinfo', myinfo, name='myinfo'),
     path('collection', collection, name='collection'),
+    path('api/article/', article),
 ]
 
 if settings.DEBUG:
